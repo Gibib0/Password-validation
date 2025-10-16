@@ -224,3 +224,29 @@ function validateEmail() {
 }
 
 emailInput.addEventListener('input', validateEmail)
+
+
+const passwordError = document.createElement('div')
+passwordError.style.color = 'red'
+passwordError.style.marginTop = '5px'
+passwordError.style.fontSize = '13px'
+passwordError.style.display = 'none'
+
+passwordConfirm.appendChild(passwordError)
+
+function validatePassword() {
+	const passwordValue = passwordInput.value.trim()
+	const confirmValue = passwordConfirmInput.value.trim()
+
+	if (confirmValue && passwordValue !== confirmValue) {
+		passwordConfirmInput.style.border = '3px solid red'
+		passwordError.textContent = 'Password doesnt match'
+		passwordError.style.display = 'block'
+	} else {
+		passwordConfirmInput.style.border = '1px solid #ccc'
+		passwordError.textContent = ''
+		passwordError.style.display = 'none'
+	}
+}
+
+passwordConfirmInput.addEventListener('input', validatePassword)
