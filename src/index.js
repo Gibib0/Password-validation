@@ -234,7 +234,7 @@ function validatePassword() {
 	const passwordValue = passwordInput.value.trim()
 	const confirmValue = passwordConfirmInput.value.trim()
 
-	if (confirmValue && passwordValue !== confirmValue) {
+	if (passwordValue !== confirmValue) {
 		passwordConfirmInput.style.border = '3px solid red'
 		passwordError.textContent = 'Password doesnt match'
 		passwordError.style.display = 'block'
