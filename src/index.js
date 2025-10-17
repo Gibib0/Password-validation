@@ -193,11 +193,7 @@ form.addEventListener('submit', (e) => {
 	form.reset()
 })
 
-cancelBtn.addEventListener('click', () => {
-	if (confirm('Clear form?')) {
-		form.reset()
-	}
-})
+cancelBtn.addEventListener('click', () => form.reset())
 
 
 const emailError = document.createElement('div')
